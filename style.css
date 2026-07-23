@@ -1,0 +1,42 @@
+ /* Navigation Bar Container */
+.navbar {
+  background-color: #556da3; /* Header background color */
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 15px 40px;
+  gap: 60px; /* Space between logo and menu items */
+}
+
+/* Logo Styling */
+.navbar .logo img {
+  height: 45px; /* Adjust logo height as needed */
+  display: block;
+}
+
+/* Navigation Links Container */
+.nav-links {
+  display: flex;
+  gap: 35px; /* Distance between menu links */
+}
+
+/* Base Link Styling */
+.nav-links a {
+  color: #ffffff;
+  text-decoration: none;
+  font-family: Arial, sans-serif;
+  font-weight: bold;
+  font-size: 16px;
+  letter-spacing: 0.5px;
+  transition: color 0.3s ease;
+}
+
+/* Active Link State (Yellow color for active page) */
+.nav-links a.active {
+  color: #fca311; 
+}
+
+/* Hover State (Color changes to yellow on mouse hover) */
+.nav-links a:hover {
+  color: #fca311;
+}

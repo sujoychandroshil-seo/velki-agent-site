@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- FAVICON LINK HERE -->
+  <link rel="icon" type="image/png" href="logos.png">
+
+  <title>Disclaimer - Velki</title>
+
+  <!-- Font Awesome CDN for Social Media Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+  <style>
+    /* --- GLOBAL STYLES --- */
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      background: #dbc70f;
+      margin: 0;
+      padding: 15px 8px;
+    }
+
+    /* --- NAVIGATION BAR --- */
+    .navbar {
+      background-color: #173882;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 10px 15px;
+      margin-bottom: 20px;
+      border-radius: 4px;
+      position: relative;
+      z-index: 1000;
+    }
+
+    .logo img {
+      height: 40px;
+      width: auto;
+      background-color: #ffffff;
+      padding: 3px;
+      border-radius: 4px;
+      display: block;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 20px;
+    }
+
+    .nav-links a {
+      color: #ffffff;
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 15px;
+      letter-spacing: 0.5px;
+      transition: color 0.2s ease;
+    }
+
+    .nav-links a.active,
+    .nav-links a:hover {
+      color: #fca311;
+    }
+
+    /* MOBILE MENU TOGGLE BUTTON */
+    .mobile-toggle-btn {
+      display: none;
+      background: #fca311;
+      color: #000000;
+      border: none;
+      font-size: 18px;
+      padding: 8px 12px;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+
+    /* --- CONTAINER & CONTENT STYLES --- */
+    h1 {
+      margin-top: 0;
+      color: #000;
+      font-size: 24px;
+    }
+
+    .disclaimer-container {
+      background-color: #ffffff;
+      padding: 25px;
+      border-radius: 6px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+      color: #222222;
+      line-height: 1.7;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    .disclaimer-container h2 {
+      color: #173882;
+      margin-top: 20px;
+      font-size: 20px;
+      border-bottom: 2px solid #173882;
+      padding-bottom: 8px;
+    }
+
+    .disclaimer-container h2:first-of-type {
+      margin-top: 0;
+    }
+
+    .disclaimer-container p {
+      font-size: 14px;
+      margin-bottom: 15px;
+      color: #333333;
+    }
+
+    /* WARNING BOX */
+    .warning-box {
+      background-color: #fff8e1;
+      border-left: 4px solid #fca311;
+      padding: 15px;
+      margin: 20px 0;
+      border-radius: 4px;
+    }
+
+    .warning-box p {
+      margin: 0;
+      font-weight: bold;
+      color: #8a5a00;
+    }
+
+    /* MOBILE SPECIFIC OPTIMIZATION */
+    @media (max-width: 768px) {
+      body {
+        padding: 10px 4px;
+      }
+
+      .mobile-toggle-btn {
+        display: block;
+      }
+
+      .nav-links {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background-color: #173882;
+        padding: 15px;
+        box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+        gap: 12px;
+        border-radius: 0 0 4px 4px;
+      }
+
+      .nav-links.show-dropdown {
+        display: flex;
+      }
+
+      .nav-links a {
+        width: 100%;
+        padding: 8px 10px;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+      }
+
+      .disclaimer-container {
+        padding: 15px;
+      }
+
+      .disclaimer-container h2 {
+        font-size: 18px;
+      }
+    }
+
+    /* --- FOOTER STYLES --- */
+    footer {
+      background-color: #173882;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 18px 10px;
+      margin-top: 25px;
+      border-radius: 4px;
+      gap: 14px;
+      width: 100%;
+    }
+
+    .footer-links {
+      display: flex;
+      gap: 15px;
+      flex-wrap: nowrap;
+      justify-content: center;
+      width: 100%;
+      overflow-x: auto;
+      white-space: nowrap;
+      padding-bottom: 4px;
+    }
+
+    .footer-links a {
+      color: #ffffff;
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 13px;
+      letter-spacing: 0.5px;
+      white-space: nowrap;
+      transition: color 0.2s ease-in-out;
+    }
+
+    .footer-links a.active,
+    .footer-links a:hover {
+      color: #fca311;
+    }
+
+    .social-icons {
+      display: flex;
+      gap: 12px;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .social-icon {
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      background: linear-gradient(180deg, #ffc837 0%, #ff8008 100%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #000000;
+      text-decoration: none;
+      font-size: 15px;
+      box-shadow: 0 0 10px rgba(255, 160, 0, 0.4);
+    }
+
+    .footer-copy {
+      color: #d1d1d1;
+      font-size: 11px;
+      text-align: center;
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- TOP NAVIGATION BAR -->
+  <header class="navbar">
+    <div class="logo">
+      <a href="index.html">
+        <img src="logos.png" alt="Velki Logo">
+      </a>
+    </div>
+
+    <!-- MOBILE MENU TOGGLE BUTTON -->
+    <button class="mobile-toggle-btn" id="mobileMenuToggle" aria-label="Toggle Menu">
+      <i class="fa-solid fa-bars"></i>
+    </button>
+
+    <!-- NAVIGATION LINKS -->
+    <nav class="nav-links" id="navLinks">
+      <a href="index.html">HOME</a>
+      <a href="admin.html">ADMIN</a>
+      <a href="super.html">SUPER</a>
+      <a href="master.html">MASTER</a>
+      <a href="blog.html">BLOG</a>
+    </nav>
+  </header>
+
+  <!-- PAGE CONTENT -->
+  <h1>Disclaimer & Legal Notice</h1>
+
+  <main class="disclaimer-container">
+    <h2>General Information Only</h2>
+    <p>
+      The information provided on this website is for general informational and educational purposes only. While we endeavor to keep all details accurate and up to date, Velki makes no representations or warranties of any kind, express or implied, regarding the completeness, reliability, or accuracy of the information provided on this platform.
+    </p>
+
+    <div class="warning-box">
+      <p><i class="fa-solid fa-triangle-exclamation"></i> Important Security Alert: Always verify contact credentials and official agent IDs before entering into any transaction or communication.</p>
+    </div>
+
+    <h2>Third-Party & External Links</h2>
+    <p>
+      This platform provides directory listings and links to third-party messaging services (such as WhatsApp) to assist users in identifying agents. Velki does not directly control, operate, or guarantee services provided by independent agents. Any transactions, agreements, or interactions undertaken with third parties are strictly at your own risk.
+    </p>
+
+    <h2>Limitation of Liability</h2>
+    <p>
+      Under no circumstances shall Velki, its operators, or affiliates be held liable for any loss or damage—including indirect or consequential loss—arising out of or in connection with the use of this website, reliance on listed contact details, or interactions with third-party agents.
+    </p>
+
+    <h2>User Responsibility</h2>
+    <p>
+      It is the user's sole responsibility to exercise caution, perform due diligence, and adhere to local regulatory requirements before engaging with any agent or service provider listed on this site.
+    </p>
+
+    <h2>Updates to Disclaimer</h2>
+    <p>
+      We reserve the right to amend, alter, or update this Disclaimer at any time without prior notice. Continued use of the website following any changes signifies acceptance of the revised terms.
+    </p>
+  </main>
+
+  <!-- FOOTER SECTION WITH BUTTONS AND SOCIAL MEDIA -->
+  <footer>
+    <nav class="footer-links">
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+      <a href="privacy-policy.html">Privacy Policy</a>
+      <a href="disclaimer.html" class="active">Disclaimer</a>
+    </nav>
+
+    <div class="social-icons">
+      <a href="#" class="social-icon" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+      <a href="#" class="social-icon" aria-label="X (Twitter)"><i class="fa-brands fa-x-twitter"></i></a>
+      <a href="#" class="social-icon" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+      <a href="#" class="social-icon" aria-label="Pinterest"><i class="fa-brands fa-pinterest-p"></i></a>
+      <a href="#" class="social-icon" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+    </div>
+
+    <div class="footer-copy">
+      &copy; 2026 Velki Agent. All Rights Reserved.
+    </div>
+  </footer>
+
+  <!-- JAVASCRIPT FOR MOBILE MENU TOGGLE -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      var toggleBtn = document.getElementById('mobileMenuToggle');
+      var navLinks = document.getElementById('navLinks');
+
+      if (toggleBtn && navLinks) {
+        toggleBtn.addEventListener('click', function(e) {
+          e.stopPropagation();
+          navLinks.classList.toggle('show-dropdown');
+        });
+
+        document.addEventListener('click', function(e) {
+          if (!navLinks.contains(e.target) && !toggleBtn.contains(e.target)) {
+            navLinks.classList.remove('show-dropdown');
+          }
+        });
+      }
+    });
+  </script>
+
+</body>
+</html>
